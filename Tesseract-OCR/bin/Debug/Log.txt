@@ -1,0 +1,30 @@
+ERROR 2018-12-17 10:10:34,612 90129ms Schedules              Run                - Value cannot be null.
+Parameter name: address
+DEBUG 2018-12-17 10:10:37,922 93439ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 10:10:57,275 112792ms Schedules              Run                - Value cannot be null.
+Parameter name: address
+DEBUG 2018-12-17 10:10:57,327 112844ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 10:12:03,023 178540ms Schedules              Run                - Value cannot be null.
+Parameter name: address
+DEBUG 2018-12-17 10:12:03,081 178598ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 10:19:45,390 194324ms Schedules              Run                - The parameter 'address' cannot be an empty string.
+Parameter name: address
+DEBUG 2018-12-17 10:19:45,493 194427ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 10:19:50,401 199334ms Schedules              Run                - The parameter 'address' cannot be an empty string.
+Parameter name: address
+DEBUG 2018-12-17 10:19:53,894 202828ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 10:20:25,872 234806ms Schedules              Run                - The parameter 'address' cannot be an empty string.
+Parameter name: address
+DEBUG 2018-12-17 10:20:25,922 234856ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 10:52:28,453 2157387ms Schedules              Run                - Object reference not set to an instance of an object.
+DEBUG 2018-12-17 10:52:28,871 2157805ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 22:19:21,371 4039362ms Schedules              Run                - Object reference not set to an instance of an object.
+DEBUG 2018-12-17 22:19:21,764 4039756ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 22:20:33,580 4111572ms Schedules              Run                - Input string was not in a correct format.
+DEBUG 2018-12-17 22:20:36,768 4114760ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-17 22:20:43,465 4121457ms Schedules              Run                - Input string was not in a correct format.
+DEBUG 2018-12-17 22:20:46,783 4124774ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-20 23:33:34,625 83324ms Schedules              Run                - Input string was not in a correct format.
+DEBUG 2018-12-20 23:33:37,565 86265ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+ERROR 2018-12-20 23:40:07,527 476227ms Schedules              Run                - Object reference not set to an instance of an object.
+DEBUG 2018-12-20 23:40:07,587 476287ms Detection              Detect             - Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.

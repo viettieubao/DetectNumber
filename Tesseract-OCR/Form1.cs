@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tesseract;
-using asprise_ocr_api;
 using Tesseract_OCR.Schedule;
 
 namespace Tesseract_OCR
@@ -18,6 +10,7 @@ namespace Tesseract_OCR
 
         Boolean isRun;
         Schedules schedule;
+        int a = 0;
 
         public Form1()
         {
@@ -28,6 +21,11 @@ namespace Tesseract_OCR
             schedule.charCount = int.Parse(txtCharCount.Text);
             schedule.scoreCondition = int.Parse(txtScoreCheck.Text);
             schedule.smsCondition = int.Parse(txtSendSMSCheck.Text);
+            this.timer1.Interval = int.Parse(textBox1.Text)*1000;
+            schedule.sendMail = txtSendMail.Text;
+            schedule.mailPass = txtPassMaill.Text;
+            schedule.receiveMail = txtReceiveMail.Text;
+            schedule.phone = txtPhone.Text;
         }
 
         private void btOCR_Click(object sender, EventArgs e)
@@ -55,6 +53,9 @@ namespace Tesseract_OCR
             this.txtScore.Text = this.schedule.nowScore;
             this.txtSum.Text = this.schedule.sumScores.ToString();
             this.txtCount.Text = this.schedule.count.ToString() ;
+            a++;
+            if (a>=34000)
+                this.Close();
         }
 
 
@@ -81,9 +82,18 @@ namespace Tesseract_OCR
             schedule.scoreCondition = int.Parse(txtScoreCheck.Text);
             schedule.smsCondition = int.Parse(txtSendSMSCheck.Text);
             timer1.Interval = int.Parse(textBox1.Text) * 1000;
+            schedule.sendMail = txtSendMail.Text;
+            schedule.mailPass = txtPassMaill.Text;
+            schedule.receiveMail = txtReceiveMail.Text;
+            schedule.phone = txtPhone.Text;
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

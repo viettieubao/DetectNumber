@@ -31,9 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btOCR = new System.Windows.Forms.Button();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Setting = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtReceiveMail = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtPassMaill = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSendMail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,13 +64,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtText = new System.Windows.Forms.TextBox();
             this.txtScore = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.txtSum = new System.Windows.Forms.TextBox();
             this.txtCount = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Setting.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,6 +91,8 @@
             // 
             // Setting
             // 
+            this.Setting.Controls.Add(this.groupBox2);
+            this.Setting.Controls.Add(this.groupBox1);
             this.Setting.Controls.Add(this.textBox1);
             this.Setting.Controls.Add(this.label5);
             this.Setting.Controls.Add(this.btOCR);
@@ -94,6 +106,66 @@
             resources.ApplyResources(this.Setting, "Setting");
             this.Setting.Name = "Setting";
             this.Setting.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPhone);
+            this.groupBox2.Controls.Add(this.label11);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // txtPhone
+            // 
+            resources.ApplyResources(this.txtPhone, "txtPhone");
+            this.txtPhone.Name = "txtPhone";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtReceiveMail);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.txtPassMaill);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtSendMail);
+            this.groupBox1.Controls.Add(this.label7);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // txtReceiveMail
+            // 
+            resources.ApplyResources(this.txtReceiveMail, "txtReceiveMail");
+            this.txtReceiveMail.Name = "txtReceiveMail";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // txtPassMaill
+            // 
+            resources.ApplyResources(this.txtPassMaill, "txtPassMaill");
+            this.txtPassMaill.Name = "txtPassMaill";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // txtSendMail
+            // 
+            resources.ApplyResources(this.txtSendMail, "txtSendMail");
+            this.txtSendMail.Name = "txtSendMail";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
             // 
             // textBox1
             // 
@@ -215,27 +287,6 @@
             resources.ApplyResources(this.txtScore, "txtScore");
             this.txtScore.Name = "txtScore";
             // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
             // txtSum
             // 
             resources.ApplyResources(this.txtSum, "txtSum");
@@ -245,6 +296,22 @@
             // 
             resources.ApplyResources(this.txtCount, "txtCount");
             this.txtCount.Name = "txtCount";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form1
             // 
@@ -265,8 +332,13 @@
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -279,7 +351,6 @@
         #endregion
 
         private System.Windows.Forms.Button btOCR;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox Setting;
         private System.Windows.Forms.TextBox txtSendSMSCheck;
@@ -301,14 +372,23 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtText;
         private System.Windows.Forms.TextBox txtScore;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSum;
         private System.Windows.Forms.Label txtCount;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtPassMaill;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSendMail;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtReceiveMail;
+        private System.Windows.Forms.Label label15;
     }
 }
 

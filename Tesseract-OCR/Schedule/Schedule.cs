@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tesseract;
+using log4net;
+using System.Net;
+using System.Net.Mail;
 
 namespace Tesseract_OCR.Schedule
 {
     public class Schedules
     {
+        private static readonly ILog _logger = LogManager.GetLogger(typeof(Schedules).Name);
         public Detection TextDetection { get; set; }
         //public Detection ScoreDetection { get; set; }
         public SMS sMS { get; set; }
@@ -18,13 +18,18 @@ namespace Tesseract_OCR.Schedule
         public string nowText { get; set; }
         public string nowScore { get; set; }
         public int preResult { get; set; }
-
         public int charCount { get; set; }
         public int scoreCondition { get; set; }
         public int smsCondition { get; set; }
         public int sumScores { get; set; }
-
         public int count { get; set; }
+
+        public string sendMail { get; set; }
+        public string mailPass { get; set; }
+        public string receiveMail { get; set; }
+        public string apiKey { get; set; }
+        public string secretKey { get; set; }
+        public string phone { get; set; }
         public Schedules()
         {
             capView = new CapView();
@@ -53,7 +58,6 @@ namespace Tesseract_OCR.Schedule
                     Bitmap scoreBitmap = capView.GetRectangleMatchBitmap();
                     
                     convertToBlackAndWhite(scoreBitmap);
-                    scoreBitmap.Save("C:/Users/Viet/Desktop/apc.jpg");
                     using (var scoreDetection = new TesseractEngine(@"./tessdata", "eng", EngineMode.TesseractAndCube))
                     {
 
@@ -73,14 +77,26 @@ namespace Tesseract_OCR.Schedule
                         {
                             int sumScore = int.Parse(array[0]) + int.Parse(array[1]);
                             this.sumScores = sumScore;
-                            if (sumScore >= scoreCondition)
+
+                            if (sumScore > scoreCondition)
                             {
                                 count++;
-                                if (count >= smsCondition)
+                                if (count >= smsCondition-1)
                                 {
-                                    sMS.SendSMS("Đã đủ số trận");
-                                    count = 0;
+                                    sMS.SendSMS("Thông báo đủ số lượng: "+count.ToString(),
+                                                    new MailAddress(sendMail), 
+                                                    mailPass,
+                                                    new MailAddress(receiveMail));
+                                    Console.Write(count);
+                                    if (count == smsCondition)
+                                    {
+                                        sMS.MakeCall(phone);
+                                    }
                                 }
+                            }
+                            else
+                            {
+                                count = 0;
                             }
                         }
                     }
@@ -93,7 +109,7 @@ namespace Tesseract_OCR.Schedule
             }
             catch (Exception e)
             {
-
+                _logger.Error(e.Message);
             }
             
             

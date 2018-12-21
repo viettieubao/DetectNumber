@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tesseract;
+using log4net;
 
 namespace Tesseract_OCR.Schedule
 {
     public class Detection
     {
+        private static readonly ILog _logger = LogManager.GetLogger(typeof(Detection).Name);
         TesseractEngine ocr;
         String testData { get; set; }
 
@@ -24,7 +22,7 @@ namespace Tesseract_OCR.Schedule
                 this.testData = testDataParam;
             }catch (Exception e)
             {
-
+                _logger.Debug(e.Message);
             }
 
         }
@@ -36,7 +34,7 @@ namespace Tesseract_OCR.Schedule
                 this.ocr = new TesseractEngine(this.testData, "eng", EngineMode.TesseractAndCube);
             }catch(Exception e)
             {
-
+                _logger.Debug(e.Message);
             }
 
         }
@@ -49,6 +47,7 @@ namespace Tesseract_OCR.Schedule
                 return page.GetText();
             }catch (Exception e)
             {
+                _logger.Debug(e.Message);
                 return "";
             }
 
