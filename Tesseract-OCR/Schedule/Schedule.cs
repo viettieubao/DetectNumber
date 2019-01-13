@@ -30,6 +30,8 @@ namespace Tesseract_OCR.Schedule
         public string apiKey { get; set; }
         public string secretKey { get; set; }
         public string phone { get; set; }
+
+        public int isrunning =0;
         public Schedules()
         {
             capView = new CapView();
@@ -43,20 +45,23 @@ namespace Tesseract_OCR.Schedule
         {
             try
             {
+                isrunning++;
+                if(isrunning >= 72)
+                {
+                    sMS.SendSMS("Hiện không có trận đấu nào diễn ra ",
+                                                                        new MailAddress(sendMail),
+                                                                        mailPass,
+                                                                        new MailAddress(receiveMail));
+                }
                 Bitmap textBitmap = capView.GetRectangleTextBitmap();
                 convertToBlackAndWhite(textBitmap);
-                //Retrain();
                 string result = TextDetection.Detect(textBitmap);
-                //formart string
                 result = result.Replace("\n", String.Empty);
                 result = System.Text.RegularExpressions.Regex.Replace(result, " ", "");
                 this.nowText = result;
-
                 if (preResult == 0 && this.charCount == result.Length)
                 {
-
                     Bitmap scoreBitmap = capView.GetRectangleMatchBitmap();
-                    
                     convertToBlackAndWhite(scoreBitmap);
                     using (var scoreDetection = new TesseractEngine(@"./tessdata", "eng", EngineMode.TesseractAndCube))
                     {
@@ -64,34 +69,34 @@ namespace Tesseract_OCR.Schedule
                         preResult = 1;
 
                         string score = scoreDetection.Process(scoreBitmap).GetText();
+
+                        //replace kí tự hay bị lỗi 
                         score = score.Replace("\n", String.Empty);
                         score = System.Text.RegularExpressions.Regex.Replace(score, " ", "");
-
-
-                        Console.Write(">?>>>>>> Score: " + score);
                         score = System.Text.RegularExpressions.Regex.Replace(score, "o", "0");
                         score = System.Text.RegularExpressions.Regex.Replace(score, "l", "1");
+
                         this.nowScore = score;
                         string[] array = score.Split('-');
                         if (array.Length == 2)
                         {
+                            isrunning = 0;
                             int sumScore = int.Parse(array[0]) + int.Parse(array[1]);
                             this.sumScores = sumScore;
 
                             if (sumScore > scoreCondition)
                             {
                                 count++;
-                                if (count >= smsCondition-1)
+                                if (count >= 4)
                                 {
                                     sMS.SendSMS("Thông báo đủ số lượng: "+count.ToString(),
                                                     new MailAddress(sendMail), 
                                                     mailPass,
                                                     new MailAddress(receiveMail));
-                                    Console.Write(count);
-                                    if (count == smsCondition)
-                                    {
-                                        sMS.MakeCall(phone);
-                                    }
+                                }
+                                if (count == smsCondition)
+                                {
+                                    sMS.MakeCall(phone);
                                 }
                             }
                             else
