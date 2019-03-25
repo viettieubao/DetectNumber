@@ -43,7 +43,6 @@ namespace Tesseract_OCR.Schedule
             try
             {
                 var page = ocr.Process(bitmap);
-                Console.WriteLine(">>>>>>>>>>>>>>>>> Result: " + page.GetText());
                 return page.GetText();
             }catch (Exception e)
             {

@@ -33,6 +33,8 @@
             this.btOCR = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Setting = new System.Windows.Forms.GroupBox();
+            this.txtSendSMSCheck = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -46,7 +48,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtSendSMSCheck = new System.Windows.Forms.TextBox();
+            this.txtCallCheck = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtScoreCheck = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -91,13 +93,15 @@
             // 
             // Setting
             // 
+            this.Setting.Controls.Add(this.txtSendSMSCheck);
+            this.Setting.Controls.Add(this.label9);
             this.Setting.Controls.Add(this.groupBox2);
             this.Setting.Controls.Add(this.groupBox1);
             this.Setting.Controls.Add(this.textBox1);
             this.Setting.Controls.Add(this.label5);
             this.Setting.Controls.Add(this.btOCR);
             this.Setting.Controls.Add(this.button2);
-            this.Setting.Controls.Add(this.txtSendSMSCheck);
+            this.Setting.Controls.Add(this.txtCallCheck);
             this.Setting.Controls.Add(this.label14);
             this.Setting.Controls.Add(this.txtScoreCheck);
             this.Setting.Controls.Add(this.label13);
@@ -106,6 +110,16 @@
             resources.ApplyResources(this.Setting, "Setting");
             this.Setting.Name = "Setting";
             this.Setting.TabStop = false;
+            // 
+            // txtSendSMSCheck
+            // 
+            resources.ApplyResources(this.txtSendSMSCheck, "txtSendSMSCheck");
+            this.txtSendSMSCheck.Name = "txtSendSMSCheck";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
             // 
             // groupBox2
             // 
@@ -184,10 +198,10 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtSendSMSCheck
+            // txtCallCheck
             // 
-            resources.ApplyResources(this.txtSendSMSCheck, "txtSendSMSCheck");
-            this.txtSendSMSCheck.Name = "txtSendSMSCheck";
+            resources.ApplyResources(this.txtCallCheck, "txtCallCheck");
+            this.txtCallCheck.Name = "txtCallCheck";
             // 
             // label14
             // 
@@ -311,7 +325,6 @@
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form1
             // 
@@ -332,7 +345,6 @@
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -353,7 +365,7 @@
         private System.Windows.Forms.Button btOCR;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox Setting;
-        private System.Windows.Forms.TextBox txtSendSMSCheck;
+        private System.Windows.Forms.TextBox txtCallCheck;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtScoreCheck;
         private System.Windows.Forms.Label label13;
@@ -389,6 +401,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtReceiveMail;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtSendSMSCheck;
+        private System.Windows.Forms.Label label9;
     }
 }
 

@@ -26,6 +26,7 @@ namespace Tesseract_OCR
             schedule.mailPass = txtPassMaill.Text;
             schedule.receiveMail = txtReceiveMail.Text;
             schedule.phone = txtPhone.Text;
+            schedule.callCondition = int.Parse(txtCallCheck.Text);
         }
 
         private void btOCR_Click(object sender, EventArgs e)
@@ -48,7 +49,12 @@ namespace Tesseract_OCR
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.schedule.Run();
+            int checkRun = this.schedule.Run();
+            if (checkRun==1)
+            {
+                timer1.Stop();
+                MessageBox.Show("Nạp tiền vào tài khoản để có thể tiếp tục thực hiện cuộc gọi");
+            }
             this.txtText.Text = this.schedule.nowText;
             this.txtScore.Text = this.schedule.nowScore;
             this.txtSum.Text = this.schedule.sumScores.ToString();
@@ -81,6 +87,7 @@ namespace Tesseract_OCR
             schedule.charCount = int.Parse( txtCharCount.Text);
             schedule.scoreCondition = int.Parse(txtScoreCheck.Text);
             schedule.smsCondition = int.Parse(txtSendSMSCheck.Text);
+            schedule.callCondition = int.Parse(txtCallCheck.Text);
             timer1.Interval = int.Parse(textBox1.Text) * 1000;
             schedule.sendMail = txtSendMail.Text;
             schedule.mailPass = txtPassMaill.Text;
@@ -88,14 +95,5 @@ namespace Tesseract_OCR
             schedule.phone = txtPhone.Text;
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

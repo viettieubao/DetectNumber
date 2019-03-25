@@ -11,7 +11,6 @@ namespace Tesseract_OCR.Schedule
     {
         private static readonly ILog _logger = LogManager.GetLogger(typeof(Schedules).Name);
         public Detection TextDetection { get; set; }
-        //public Detection ScoreDetection { get; set; }
         public SMS sMS { get; set; }
         public CapView capView { get; set; }
 
@@ -21,6 +20,7 @@ namespace Tesseract_OCR.Schedule
         public int charCount { get; set; }
         public int scoreCondition { get; set; }
         public int smsCondition { get; set; }
+        public int callCondition { get; set; }
         public int sumScores { get; set; }
         public int count { get; set; }
 
@@ -37,16 +37,16 @@ namespace Tesseract_OCR.Schedule
             capView = new CapView();
             sMS = new SMS();
             TextDetection = new Detection("./tessdata");
-            //ScoreDetection = new Detection("./tessdata2");
             this.preResult = 0;
             this.count = 0;
         }
-        public void Run()
+        public int Run()
         {
             try
             {
+                _logger.Debug("aaaaaaaaaaaaaa");
                 isrunning++;
-                if(isrunning >= 72)
+                if(isrunning >= 7200)
                 {
                     sMS.SendSMS("Hiện không có trận đấu nào diễn ra ",
                                                                         new MailAddress(sendMail),
@@ -87,16 +87,20 @@ namespace Tesseract_OCR.Schedule
                             if (sumScore > scoreCondition)
                             {
                                 count++;
-                                if (count >= 4)
+                                if (count >= smsCondition)
                                 {
                                     sMS.SendSMS("Thông báo đủ số lượng: "+count.ToString(),
                                                     new MailAddress(sendMail), 
                                                     mailPass,
                                                     new MailAddress(receiveMail));
                                 }
-                                if (count == smsCondition)
+                                if (count == callCondition)
                                 {
-                                    sMS.MakeCall(phone);
+                                    bool checkBalance =sMS.MakeCall(phone);
+                                    if (checkBalance ==false)
+                                    {
+                                        return 1;
+                                    }
                                 }
                             }
                             else
@@ -116,8 +120,8 @@ namespace Tesseract_OCR.Schedule
             {
                 _logger.Error(e.Message);
             }
-            
-            
+
+            return 0;
         }
         public void Retrain()
         {

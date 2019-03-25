@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 using log4net;
+using Newtonsoft.Json;
 
 namespace Tesseract_OCR.Schedule
 {
@@ -31,6 +32,7 @@ namespace Tesseract_OCR.Schedule
                 smtp.Credentials = new NetworkCredential(sendMail.Address, pass);
                 smtp.Timeout = 30000;
                 smtp.Send(mailMessage);
+                
             } catch(Exception e)
             {
                 _logger.Error(e.Message);
@@ -38,7 +40,7 @@ namespace Tesseract_OCR.Schedule
             
         }
 
-        public void MakeCall(string phone)
+        public bool MakeCall(string phone)
         {
             if (webRequest != null)
                 webRequest = null;
@@ -53,7 +55,13 @@ namespace Tesseract_OCR.Schedule
                     Stream myStream = myRes.GetResponseStream();
                     StreamReader Reader = new StreamReader(myStream);
                     // Doc cac dong tin gui ve.
-                    string Result = Reader.ReadToEnd();
+                    string result = Reader.ReadToEnd();
+                    var obj = JsonConvert.DeserializeObject(result);
+                    dynamic data = obj;
+                    if (data.CodeResult == "103")
+                    {
+                        return false;
+                    }
                 }
                 else
                     _logger.Info("Khong doc duoc");
@@ -62,7 +70,7 @@ namespace Tesseract_OCR.Schedule
             {
                 _logger.Error(e.Message);
             }
-            
+            return true;
         }
     }
 }
