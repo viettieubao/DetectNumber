@@ -26,6 +26,7 @@ namespace Tesseract_OCR
             schedule.mailPass = txtPassMaill.Text;
             schedule.receiveMail = txtReceiveMail.Text;
             schedule.phone = txtPhone.Text;
+            schedule.notify = 1800 / (timer1.Interval/1000);
             schedule.callCondition = int.Parse(txtCallCheck.Text);
         }
 
@@ -93,6 +94,7 @@ namespace Tesseract_OCR
             schedule.mailPass = txtPassMaill.Text;
             schedule.receiveMail = txtReceiveMail.Text;
             schedule.phone = txtPhone.Text;
+            schedule.notify = int.Parse(txtNotify.Text)*60/(timer1.Interval/1000);
         }
 
     }

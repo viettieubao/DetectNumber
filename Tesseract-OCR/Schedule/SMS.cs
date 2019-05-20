@@ -10,11 +10,9 @@ namespace Tesseract_OCR.Schedule
 
     public class SMS
     {
-        //string url = "http://voiceapi.esms.vn/MainService.svc/json/MakeCallTemplate_V2?";
         const string url= "http://voiceapi.esms.vn/MainService.svc/json/MakeCallTemplate_V2?ApiKey=DC37771F31FAE2127E57370F1969B8&SecretKey=67A9117735B8C4FEC78101A13AE0D8&TemplateId=484&Phone=";
         HttpWebRequest webRequest;
-        //MailAddress fromAddress = new MailAddress("anhhungtieubao@gmail.com");
-        MailAddress toAddresss = new MailAddress("quocvietuit1996@gmail.com"); //quochuy.mr@gmail.comhuyquoc.vn1@gmail.com
+        MailAddress toAddresss = new MailAddress("quocvietuit1996@gmail.com");
         private static readonly ILog _logger = LogManager.GetLogger(typeof(Schedules).Name);
 
         SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);

@@ -33,6 +33,11 @@
             this.btOCR = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Setting = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtNotify = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtSendSMSCheck = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -93,6 +98,11 @@
             // 
             // Setting
             // 
+            this.Setting.Controls.Add(this.label18);
+            this.Setting.Controls.Add(this.label17);
+            this.Setting.Controls.Add(this.label16);
+            this.Setting.Controls.Add(this.txtNotify);
+            this.Setting.Controls.Add(this.label10);
             this.Setting.Controls.Add(this.txtSendSMSCheck);
             this.Setting.Controls.Add(this.label9);
             this.Setting.Controls.Add(this.groupBox2);
@@ -110,6 +120,31 @@
             resources.ApplyResources(this.Setting, "Setting");
             this.Setting.Name = "Setting";
             this.Setting.TabStop = false;
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // txtNotify
+            // 
+            resources.ApplyResources(this.txtNotify, "txtNotify");
+            this.txtNotify.Name = "txtNotify";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // txtSendSMSCheck
             // 
@@ -403,6 +438,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtSendSMSCheck;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtNotify;
+        private System.Windows.Forms.Label label10;
     }
 }
 

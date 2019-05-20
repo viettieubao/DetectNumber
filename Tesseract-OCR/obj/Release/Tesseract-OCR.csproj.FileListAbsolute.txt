@@ -22,12 +22,7 @@ C:\Users\Viet\Desktop\Tesseract-OCR\Tesseract-OCR\obj\Release\Tesseract-OCR.exe
 C:\Users\Viet\Desktop\Tesseract-OCR\Tesseract-OCR\obj\Release\Tesseract-OCR.pdb
 C:\Users\Viet\Desktop\Tesseract-OCR\Tesseract-OCR\obj\Release\Tesseract-OCR.csprojAssemblyReference.cache
 C:\Users\Viet\Desktop\Tesseract-OCR\Tesseract-OCR\obj\Release\Tesseract_OCR.CapView.resources
-C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x64\liblept172.dll
-C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x64\libtesseract304.dll
-C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x86\liblept172.dll
-C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x86\libtesseract304.dll
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\Tesseract.dll
-C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\Tesseract.xml
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\Tesseract_OCR.CapView.resources
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\Tesseract_OCR.Form1.resources
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\Tesseract-OCR.csproj.GenerateResource.cache
@@ -44,3 +39,8 @@ C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Rele
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\BongDaSo.Properties.Resources.resources
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\BongDaSo.exe
 C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\BongDaSo.pdb
+C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\obj\Release\Tesseract-OCR.csprojAssemblyReference.cache
+C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x86\liblept1753.dll
+C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x86\libtesseract3052.dll
+C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x64\liblept1753.dll
+C:\Users\Viet\Documents\GitHub\Tesseract-OCR\DetectNumber\Tesseract-OCR\bin\Release\x64\libtesseract3052.dll

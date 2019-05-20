@@ -23,6 +23,7 @@ namespace Tesseract_OCR.Schedule
         public int callCondition { get; set; }
         public int sumScores { get; set; }
         public int count { get; set; }
+        public int notify { get; set; }
 
         public string sendMail { get; set; }
         public string mailPass { get; set; }
@@ -44,14 +45,15 @@ namespace Tesseract_OCR.Schedule
         {
             try
             {
-                _logger.Debug("aaaaaaaaaaaaaa");
                 isrunning++;
-                if(isrunning >= 7200)
+                if(isrunning >= notify)
                 {
                     sMS.SendSMS("Hiện không có trận đấu nào diễn ra ",
                                                                         new MailAddress(sendMail),
                                                                         mailPass,
                                                                         new MailAddress(receiveMail));
+                    _logger.Info("Hiện không có trận đấu nào diễn ra" + DateTime.Now.ToString()); 
+                    isrunning = 0;
                 }
                 Bitmap textBitmap = capView.GetRectangleTextBitmap();
                 convertToBlackAndWhite(textBitmap);
